@@ -1,3 +1,4 @@
+@import 'common/app_base';
 body {
   background-color: #fff;
   color: #333;
@@ -81,4 +82,8 @@ div {
 
 label {
   display: block;
+}
+
+header{
+  background-color: $base_bg_color;
 }
