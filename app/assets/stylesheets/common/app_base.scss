@@ -1,1 +1,64 @@
-$base_bg_color: #F1F1F1;
+$base_bg_color: #f1f1f1;
+$color_green: #419a1c;
+$color_white: #ffffff;
+$color_black: #000000;
+$color_gray: #3a3a3a;
+body{
+  header.bs-docs-nav.navbar.navbar-static-top{
+    margin-bottom: 0px;
+    border-bottom: 0px none;
+    background-color: $color_green;
+    .container{
+      .navbar-header{
+        a.navbar-brand{
+          margin-top: 6px;
+        }
+      }
+    }
+  }
+}
+.container{
+  .navbar-header{
+    .navbar-brand{
+      height: auto;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+  }
+  .navbar-collapse{
+    ul.navbar-nav{
+      height: 68px;
+      line-height: 68px;
+      padding-top: 24px;
+      li{
+        a{
+          padding-top: 0px;
+          padding-bottom: 0px;
+          color: $color_white;
+          &:hover{
+            background-color: transparent;
+            color: $color_white;
+            opacity: 0.85;
+          }
+        }
+      }
+    }    
+  }
+}
+html, body{
+  height: 100%;
+  min-height: 100%;
+  .container.bs-docs-container{
+    min-height: calc(100% - 136px);
+  }
+}
+footer {
+  clear: both;
+  position: relative;
+  background-color: $base_bg_color;
+  z-index: 10;
+  height: 68px;
+}
+
+
+
