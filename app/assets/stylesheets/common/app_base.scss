@@ -11,7 +11,10 @@ body{
     .container{
       .navbar-header{
         a.navbar-brand{
-          margin-top: 6px;
+          margin-top: 0px;
+          img{
+            margin-top:-2px;
+          }
         }
       }
     }
