@@ -1,3 +1,4 @@
+<div class="central_form">
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -5,7 +6,7 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "off" %>
   </div>
 
   <div class="field">
@@ -27,3 +28,4 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
