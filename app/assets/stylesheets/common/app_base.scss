@@ -179,3 +179,14 @@ footer {
   float: right;
 }
 
+#bs-navbar{
+  .navbar-nav > li > a{
+    &:active{
+      background-color: transparent;
+    }
+    &:hover{
+      outline: 0px none;
+    }
+  }
+}
+
