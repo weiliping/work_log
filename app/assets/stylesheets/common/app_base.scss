@@ -59,7 +59,7 @@ html, body{
   height: 100%;
   min-height: 100%;
   .container.bs-docs-container{
-    min-height: calc(100% - 148px);
+    min-height: calc(100% - 168px);
   }
 }
 footer {
@@ -67,7 +67,7 @@ footer {
   position: relative;
   background-color: $base_bg_color;
   z-index: 10;
-  height: 80px;
+  height: 100px;
 }
 *{
   outline: none;
@@ -115,25 +115,36 @@ footer {
   .footer_text{
     display: inline-block;
     width: 50%;
+    padding-top: 9px;
     .footer-copy{
       height: 40px;
       line-height: 40px;
+      a{
+        color: #757575;
+        margin-right: 28px;
+        float: left;
+        &:hover{
+          color: $color_green;
+        }
+      }
     }
   }
   .social-copyright{
+    width: 220px;
     .social-icons{
+      float: left;
       .social-icon{
         float: right;
-        font-size: 20px;
-        width: 40px;
-        height: 40px;
+        font-size: 18px;
+        width: 32px;
+        height: 32px;
         text-align: center;
         background-color: $color_white;
         text-decoration: none;
-        margin-left: 10px;
+        margin-right: 10px;
         color: #fff;
-        line-height: 40px;
-        border-radius: 40px;
+        line-height: 32px;
+        border-radius: 32px;
         &:hover{
           opacity: 0.8; 
         }  
@@ -154,11 +165,15 @@ footer {
         background-color: $color_icon_linkedin;
       }
     }
+    .copyright{
+      width: 100%;
+      float: left;
+      margin-top: 10px;
+    }
   }
 }
 .align_left{
   float: left;
-  
 }
 .align_right{
   float: right;
