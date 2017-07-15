@@ -1,0 +1,4 @@
+if($('#app_sign_in_modal_id').length == 0){
+	$("body").append("<%= j render "/devise/sessions/signin", :local =>{:resource_name => 'user'} %>");
+}
+$('#app_sign_in_modal_id').modal('show');
