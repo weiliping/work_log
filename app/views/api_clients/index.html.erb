@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Api Clients</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>App token</th>
+      <th>App secret</th>
+      <th>Is active</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @api_clients.each do |api_client| %>
+      <tr>
+        <td><%= api_client.name %></td>
+        <td><%= api_client.app_token %></td>
+        <td><%= api_client.app_secret %></td>
+        <td><%= api_client.is_active %></td>
+        <td><%= link_to 'Show', api_client %></td>
+        <td><%= link_to 'Edit', edit_api_client_path(api_client) %></td>
+        <td><%= link_to 'Destroy', api_client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Api Client', new_api_client_path %>

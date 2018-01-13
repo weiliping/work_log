@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  app_token: MyString
+  app_secret: MyString
+  is_active: false
+
+two:
+  name: MyString
+  app_token: MyString
+  app_secret: MyString
+  is_active: false
