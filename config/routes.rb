@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :api_clients
+  resources :api_keys
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }

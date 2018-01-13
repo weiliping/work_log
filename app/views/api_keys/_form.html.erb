@@ -1,0 +1,37 @@
+<%= form_with(model: api_key, local: true) do |form| %>
+  <% if api_key.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(api_key.errors.count, "error") %> prohibited this api_key from being saved:</h2>
+
+      <ul>
+      <% api_key.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :access_token %>
+    <%= form.text_field :access_token, id: :api_key_access_token %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :api_key_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :api_client_id %>
+    <%= form.number_field :api_client_id, id: :api_key_api_client_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expires_at %>
+    <%= form.datetime_select :expires_at, id: :api_key_expires_at %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
