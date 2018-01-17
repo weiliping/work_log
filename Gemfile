@@ -33,6 +33,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'react-rails'
+
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 gem 'bootstrap3-rails'
@@ -44,6 +46,8 @@ gem 'devise'
 gem 'jsonapi-rails'
 
 gem 'jsonapi_suite'
+
+gem 'rack-attack'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

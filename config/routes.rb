@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  scope '/api' do
+    scope '/v1' do
+      
+    end
+  end
   resources :api_clients
   resources :api_keys
   devise_for :users, controllers: {
