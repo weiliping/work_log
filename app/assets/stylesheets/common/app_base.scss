@@ -61,6 +61,16 @@ html, body{
   .container.bs-docs-container{
     min-height: calc(100% - 168px);
   }
+  a{
+    background-color: transparent;
+    &:hover{
+      outline: none;
+      background-color: transparent;
+    }
+    &:focus{
+      outline: none;
+    }
+  }
 }
 footer {
   clear: both;
@@ -124,6 +134,7 @@ footer {
         margin-right: 28px;
         float: left;
         &:hover{
+          background-color: transparent;
           color: $color_green;
         }
       }
@@ -185,6 +196,7 @@ footer {
       background-color: transparent;
     }
     &:hover{
+      background-color: transparent;
       outline: 0px none;
     }
   }
