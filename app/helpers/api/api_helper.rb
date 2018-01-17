@@ -17,9 +17,7 @@ module Api::ApiHelper
   end
   
   def self.api_token_exipred_time(minutes=120)
-    default_minutes = 120 
-    exipres_minutes = minutes.present? && minutes.to_i > 0 ? minutes : default_minutes 
-    Time.now + exipres_minutes * 60
+    minutes.present? && minutes.to_i > 0 ? minutes*60 : 120*60 
   end
     
   def self.is_expired_time(dt_time)
@@ -27,9 +25,11 @@ module Api::ApiHelper
   end  
   
   def self.get_expires_in(dt_time)
-    expires_in = Api::ApiHelper::API_ACCESS_TOKEN_EXPIRED_MINS * 60
-    expires_in = (dt_time.utc - Time.now.utc).to_i if dt_time.present?
-    expires_in
+    dt_time.present? ? (dt_time.utc - Time.now.utc).to_i : self.default_expires_in
+  end
+  
+  def self.default_expires_in
+    Api::ApiHelper::API_ACCESS_TOKEN_EXPIRED_MINS * 60
   end
     
   def self.is_valid_phone(phone)
@@ -81,23 +81,17 @@ module Api::ApiHelper
   end
   
   def self.encode64_str(str)
-    encode_str = ''
-    if self.is_string(str)
-      encode_str = Base64.strict_encode64(str.to_s.strip)
-    end
-    encode_str
+    self.is_string(str) ? Base64.strict_encode64(str.to_s.strip) : ""
   end
   
   def self.decode64_str(str)
-    decode_str = ''
-    if self.is_string(str)
-      begin
-        decode_str = Base64.strict_decode64(str) # decode data
-      rescue ArgumentError => e
-        Rails.logger.debug "Could not decrypt data: #{e}, #{str}"
-      end
+    back_str  = ''
+    begin
+      back_str = Base64.strict_decode64(str) if self.is_string(str) 
+    rescue ArgumentError => e
+      Rails.logger.debug "Could not decrypt data: #{e}, #{str}"
     end
-    decode_str
+    back_str
   end
   
   def self.is_start_http_or_https(url)
