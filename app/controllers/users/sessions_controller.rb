@@ -14,9 +14,16 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+  def create
+    if request.xhr?
+      respond_to do |format|
+        format.js { render "/devise/sessions/signin_succeed" }
+      end
+    else
+      super
+      Rails.logger.debug "------------------ ---resource_name #{resource_name}"
+    end
+  end
 
   # DELETE /resource/sign_out
   # def destroy

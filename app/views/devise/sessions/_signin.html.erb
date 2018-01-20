@@ -26,17 +26,15 @@
 		      <%= f.label :remember_me %>
 		    </div>
 		  <% end -%>
-		
-		  <div class="actions">
-		    <%= f.submit "Log in" %>
-		  </div>
 		<% end %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Sign In</button>
+        <button type="button" class="btn btn-primary btn_sign_in" onclick="submit_signin();">Sign In</button>
+        
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
 <%= render "devise/shared/links" %>
+<%= javascript_include_tag 'auth/auth', 'data-turbolinks-track': 'reload' %>
